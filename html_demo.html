@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Demo Page</title>
+</head>
+<body>
+    <h1>HTML Demo Page</h1>
+    <p>This page demonstrates various HTML tags and their basic usage.</p>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW-6:Q-1: JavaScript Commands Demo</title>
+    
+    <script>
+        function changeText() {
+            document.getElementById("text").innerHTML = "Text changed using JavaScript!";
+        }
+
+        function changeColor() {
+            document.getElementById("text").style.color = "blue";
+        }
+
+        function showDate() {
+            document.getElementById("date").innerHTML = new Date();
+        }
+
+        function addNumbers() {
+            let sum = 5 + 10;
+            document.getElementById("sum").innerHTML = "5 + 10 = " + sum;
+        }
+
+        function toggleVisibility() {
+            let elem = document.getElementById("toggle");
+            if (elem.style.display === "none") {
+                elem.style.display = "block";
+            } else {
+                elem.style.display = "none";
+            }
+        }
+
+        function promptUser() {
+            let name = prompt("What is your name?");
+            document.getElementById("username").innerHTML = "Hello, " + name;
+        }
+
+        function generateRandomNumber() {
+            document.getElementById("random").innerHTML = "Random Number: " + Math.floor(Math.random() * 100);
+        }
+
+        function confirmAction() {
+            let response = confirm("Do you want to proceed?");
+            document.getElementById("confirm").innerHTML = response ? "You pressed OK." : "You pressed Cancel.";
+        }
+    </script>
+     <script>
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = "lightblue";
+            console.log("Background color changed to light blue!");
+        }
+    </script>
+    <script>
+        function changeBackgroundColor() {
+            let colors = ["red", "blue", "green", "yellow", "purple", "orange"];
+            let randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+            console.log("Background color changed to:", randomColor);
+        }
+    </script>
+    <script>
+        function speakText() {
+            let msg = new SpeechSynthesisUtterance();
+            msg.text = "Hello! This is a text-to-speech demo using JavaScript.";
+            msg.lang = "en-US"; // Language (English - US)
+            msg.volume = 1; // Volume (0 to 1)
+            msg.rate = 1; // Speed of speech (0.1 to 10)
+            msg.pitch = 1; // Pitch (0 to 2)
+            
+            window.speechSynthesis.speak(msg);
+            console.log("Speaking: " + msg.text);
+        }
+    </script>
+        
+</head>
+<body>
+    <h2>HW6-Q-1: JavaScript Commands Demonstration:</h2>
+
+    <p>Click the button to hear the webpage speak:</p>
+    
+    1. <button onclick="speakText()">Speak</button><br></br>
+    2. <button onclick="changeText()">Change Text</button> <p>Changes the text of an element.</p> <p id="text">This is a sample text.</p>
+    3. <button onclick="changeColor()">Change Color</button> <p>Changes the color of text.</p>
+    4. <button onclick="showDate()">Show Date</button> <p>Displays the current date and time.</p>  <p id="date"></p>
+    5. <button onclick="addNumbers()">Add Numbers</button> <p>Adds two numbers and displays the result.</p>     <p id="sum"></p>
+    6. <button onclick="toggleVisibility()">Toggle Visibility</button> <p>Hides or shows an element.</p>  <p id="toggle">This text can be toggled.</p>
+    7. <button onclick="promptUser()">Prompt User</button> <p>Asks for user input with a prompt box.</p>  <p id="username"></p>
+    8. <button onclick="generateRandomNumber()">Random Number</button> <p>Generates a random number.</p>  <p id="random"></p>
+    9. <button onclick="confirmAction()">Confirm Action</button> <p>Displays a confirmation box.</p>  <p id="confirm"></p>
+  10. <button onclick="changeBackgroundColor()">Change Background Color</button>
+    <p>Click the button above to change the background color of the page.</p>
+    
+   
+</body>
+</html>
+
+  
+
+    <!-- Headings -->
+    <h1>1. Headings:</h1>
+    <h1>Heading 1</h2>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+
+    <!-- Paragraph and Text Formatting -->
+    <h2>2. Text Formatting:</h2>
+    <s>3. This text is strikethrough.</s>
+    <sup>4. This is superscript text.</sup>
+    <sub>5. This is subscript text.</sub>
+    <small>6. This text is small.</small>
+    <mark>7. This text is highlighted.</mark>
+    <p><b>8. Bold Text</b>, <i>Italic Text</i>, and <u>Underlined Text</u></p>
+
+    <!-- Hyperlinks -->
+    <h2>9. Hyperlinks:</h2>
+    <p><a href="https://dash.infinityfree.com/accounts/if0_38156714/domains/moni7310.fwh.is">This is a hyperlink</a> to my website</p>
+
+    <!-- Images -->
+<h2>10. Images:</h2>
+<h3>1.UALR Logo</h3>
+<h3>2.Pixel Avatar</h3>
+<img src="https://logodix.com/logo/1977774.png" alt="UALR Logo" dimension="102 × 125 png">
+<img src="https://static.wixstatic.com/media/d8cc5d_a2fb55ede34d4fca8442d4beece433a8~mv2.png/v1/crop/x_54,y_0,w_419,h_560/fill/w_140,h_187,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Isobel.png" alt="Pixel Avatar" dimension="100 × 100 png">
+<h2>11. Interactive Elements-Dropdown Lists:</h2>
+<label for="cars">Choose a car:</label>
+<select name="cars" id="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select>
+
+<h2>12. Checkbox:</h2>
+<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+<label for="vehicle1"> I have a bike</label><br>
+
+<h2>13. Radio Button:</h2>
+<input type="radio" id="male" name="gender" value="male">
+<label for="male">Male</label><br>
+
+    <!-- Lists -->
+    <h2>14. Lists:</h2>
+    <ol>
+        <li>First item in an ordered list</li>
+        <li>Second item in an ordered list</li>
+    </ol>
+    <ul>
+        <li>First item in an unordered list</li>
+        <li>Second item in an unordered list</li>
+    </ul>
+
+    <!-- Tables -->
+    <h2>15. Tables:</h2>
+    <table border="1">
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+        </tr>
+        <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+        </tr>
+    </table>
+
+    <!-- Forms -->
+    <h2>16. Forms:</h2>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Line Breaks and Horizontal Rule -->
+    <h2>17. Line Breaks and Horizontal Rule:</h2>
+    <p>This is the first line.<br>This is the second line.</p>
+
+            <div class="form-element">
+                <label for="university">University:</label>
+                <input type="text" id="university" name="university" value="University of Arkansas at Little Rock (UALR)">
+            </div>
+            
+        
+            <h2>18. Date Field Restrictions:</h2>
+
+<p>Use the min and max attributes to add restrictions to dates:</p>
+
+<form action="https://www.w3schools.com/action_page.php">
+  <label for="datemin">Enter a date after 2000-01-01:</label>
+  <input type="date" id="datemin" name="datemin" min="2000-01-02"><br><br>
+
+  <label for="datemax">Enter a date before 1970-01-01:</label>
+  <input type="date" id="datemax" name="datemax" max="1969-12-31"><br><br>
+  
+  <input type="submit" value="Submit">
+</form>
+
+                    <label for="gender"><h2>19. Radio Buttons (Gender):</h2></label>
+                    <input type="radio" id="male" name="gender" value="male"> Male
+                    <input type="radio" id="female" name="gender" value="female"> Female
+
+                    <label for="hobbies"><h2>20. Checkboxes (Hobbies):</h2></label>
+                    <input type="checkbox" id="sports" name="hobby" value="sports"> Sports
+                    <input type="checkbox" id="music" name="hobby" value="music"> Music
+                    <input type="checkbox" id="reading" name="hobby" value="reading"> Reading
+                
+                <h2>21. The select Element:</h2>
+<p>The select element defines a drop-down list:</p>
+
+<form action="/action_page.php">
+  <label for="cars">Choose a car:</label>
+  <select id="cars" name="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+  </select>
+</form>
+              
+                    <label for="country"><h2>22. Dropdown (Select Country):</h2></label>
+                    <select id="country" name="country">
+                        <option value="usa">United States</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="canada">Canada</option>
+                    </select><br><br>
+               
+                    <label for="message"><h2>23. Text area (Feedback):</h2></label>
+
+                    <textarea id="message" name="message" rows="4" placeholder="HTML is the standard markup language for creating Web pages.HTML stands for Hyper Text Markup Language..."></textarea>
+               
+                <h2>24. A Hidden Field (look in source code):</h2>
+
+<form action="https://www.w3schools.com/action_page.php">
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <input type="hidden" id="custId" name="custId" value="3487">
+  <input type="submit" value="Submit">
+</form>
+<p><strong>Note:</strong> The hidden field is not shown to the user, but the data is sent when the form is submitted.</p>
+                
+                <h2>25. The button Element:</h2>
+<button type="button" onclick="alert('Hello Everyone! How are you doing today?')">Click Me!</button>
+               
+<h2>26. The datalist Element:</h2>
+<p>The datalist element specifies a list of pre-defined options for an input element.</p>
+<form action="https://www.w3schools.com/action_page.php">
+  <input list="browsers" name="browser">
+  <datalist id="browsers">
+    <option value="Edge">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+  </datalist>
+  <input type="submit">
+</form>
+               
+                <h2>27. Show a Color Picker:</h2>
+<p>The <strong>input type="color"</strong> is used for input fields that should contain a color.</p>
+
+<form action="https://www.w3schools.com/action_page.php">
+  <label for="favcolor">Select your favorite color:</label>
+  <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+  <input type="submit" value="Submit">
+</form>
+              
+        <h2>28. The output Element:</h2>
+<p>The output element represents the result of a calculation.</p>
+
+<form action="https://www.w3schools.com/action_page.php"
+oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+  0
+  <input type="range" id="a" name="a" value="50">
+  100 +
+  <input type="number" id="b" name="b" value="50">
+  =
+  <output name="x" for="a b"></output>
+  <br><br>
+  <input type="submit">
+</form>
+ 
+    <h2>29. Telephone Field</h2>
+
+<p>The <strong>input type="tel"</strong> is used for input fields that should contain a telephone number:</p>
+
+<form action="https://www.w3schools.com/action_page.php">
+  <label for="phone">Enter a phone number:</label><br><br>
+  <input type="tel" id="phone" name="phone" placeholder="123-456-6789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br><br>
+  <small>Format: 123-456-6789</small><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+                    <div class="form-element">
+                <label for="salary"><h2>30. Expected Salary Range:</h2></label>
+                <input type="range" id="salary" name="salary" min="30000" max="150000">
+            </div>
+                
+                    <label for="submit"> Submit Button:</label>
+                    <input type="submit" class="btn" value="Submit Form">
+               
+                    <strong><h2>31. Action Attribute:</h2></strong> <br>
+                    The form submits data to: <code>action="https://www.w3schools.com/action_page.php"</code>
+               
+             <h2>32. Submit Your Name</h2>
+    <form action="https://www.w3schools.com/action_page.php" method="get">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="Serajum Munira">
+        <input type="submit" value="Submit">
+    </form>
+
+    </div>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Output Methods</title>
+    <script>
+        function outputInnerHTML() {
+            document.getElementById("output").innerHTML = "This is innerHTML output!";
+        }
+
+        function outputDocumentWrite() {
+            document.write("This is document.write() output! (Note: This can overwrite the page content.)");
+        }
+
+        function outputAlert() {
+            alert("This is an alert box output!");
+        }
+
+        function outputPrint() {
+            window.print();
+        }
+
+        function logToConsole() {
+            console.log("This message is logged to the browser console.");
+        }
+    </script>
+</head>
+<body>
+
+    <h2>33. Q4a: JavaScript Output Methods</h2>
+
+    <p id="output">Click the first button to change this text using innerHTML.</p>
+    
+    1. <button onclick="outputInnerHTML()">Use innerHTML</button><br><br>
+    2. <button onclick="outputDocumentWrite()">Use document.write()</button><br><br>
+    3. <button onclick="outputAlert()">Use alert()</button><br><br>
+    4. <button onclick="outputPrint()">Use window.print()</button>
+
+    <h2>34. Q4b: Console.log() Output</h2>
+
+    <p>Click the button below to log a message in the browser console. Open the Developer Console (F12 or right-click → Inspect → Console tab) to see the output.</p>
+    <button onclick="logToConsole()">Log to Console</button><br><br>
+
+</body>
+</html>
+
+
+    <!-- Back to Homepage Link -->
+    <a href="index.html">Back to Homepage</a><br>
+    <a href="http://moni7310.fwh.is/hw1.html">Back to Homework1<a><br>
+    <a href="http://moni7310.fwh.is/hw2.html">Back to Homework2<a><br>
+    <a href="http://moni7310.fwh.is/hw3.html">Back to Homework3<a>
+        
+        
+</body>
+</html>

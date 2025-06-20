@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduate Research Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #2196F3, #E91E63);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        .btn {
+            background-color: white;
+            color: #333;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        .btn:hover {
+            background-color: #ddd;
+        }
+        .dynamic-text {
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🎓 Welcome to the Graduate Research Portal</h1>
+    <p>Your one-stop solution for managing your master's Degree project.</p>
+
+    <button class="btn" onclick="showDeadline()">Check Deadlines</button>
+    <button class="btn" onclick="showTip()">Research Tip</button>
+
+    <p class="dynamic-text" id="dynamicOutput"></p>
+</div>
+
+<script>
+    function showDeadline() {
+        let deadlines = ["March 15 - Proposal Due", "June 30 - Progress Report", "September 10 - Final Submission"];
+        let randomDeadline = deadlines[Math.floor(Math.random() * deadlines.length)];
+        document.getElementById("dynamicOutput").innerText = "Upcoming Deadline: " + randomDeadline;
+    }
+
+    function showTip() {
+        let tips = [
+            "Start early! Research takes longer than expected.",
+            "Keep a detailed research log to track progress.",
+            "Attend seminars and network with experts in your field.",
+            "Use reference managers like Zotero or EndNote to organize sources."
+        ];
+        let randomTip = tips[Math.floor(Math.random() * tips.length)];
+        document.getElementById("dynamicOutput").innerText = "📌 Tip: " + randomTip;
+    }
+</script>
+
+</body>
+</html>

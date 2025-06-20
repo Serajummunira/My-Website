@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaghetti Diagram - Get My Degree</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        .diagram-container {
+            position: relative;
+            width: 850px;
+            height: 550px;
+            margin: 0 auto;
+            background-color: white;
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .step {
+            position: absolute;
+            width: 140px;
+            height: 50px;
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Positioning the process steps */
+        #step1 { top: 40px; left: 50px; }
+        #step2 { top: 120px; left: 250px; }
+        #step3 { top: 60px; left: 500px; }
+        #step4 { top: 200px; left: 100px; }
+        #step5 { top: 300px; left: 350px; }
+        #step6 { top: 150px; left: 600px; }
+        #step7 { top: 400px; left: 200px; }
+        #step8 { top: 450px; left: 450px; }
+        #step9 { top: 250px; left: 700px; background-color: #27ae60; }
+
+        /* SVG Spaghetti Lines */
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        path {
+            stroke-width: 4;
+            fill: none;
+            stroke: #e74c3c;
+            stroke-linecap: round;
+            stroke-dasharray: 10, 8;
+        }
+    </style>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaghetti Diagram - Getting My Degree</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        h2 {
+            color: #34495e;
+        }
+        ul {
+            list-style-type: square;
+            font-size: 18px;
+        }
+        canvas {
+            display: block;
+            margin: 20px auto;
+            border: 2px solid #2c3e50;
+            background-color: #ecf0f1;
+        }
+        .content {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">Spaghetti Diagram - Process Flow</h2>
+    <canvas id="spaghettiDiagram" width="800" height="400"></canvas>
+
+    <script>
+        const ctx = document.getElementById('spaghettiDiagram').getContext('2d');
+        const data = {
+            labels: [
+                "Apply for Admission",
+                "Enroll in Courses",
+                "Attend Classes",
+                "Complete Assignments",
+                "Maintain GPA",
+                "Complete Capstone",
+                "Apply for Graduation",
+                "Graduate!"
+            ],
+            datasets: [{
+                label: 'Degree Process Flow',
+                data: [1, 2, 3, 4, 5, 6, 7, 8], 
+                backgroundColor: 'rgba(52, 152, 219, 0.5)',
+                borderColor: 'rgba(41, 128, 185, 1)',
+                borderWidth: 2,
+                pointRadius: 5,
+                pointBackgroundColor: 'rgba(231, 76, 60, 1)'
+            }]
+        };
+
+        const config = {
+            type: 'line',
+            data: data,
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Degree Process Steps'
+                        }
+                    },
+                    y: {
+                        display: false
+                    }
+                }
+            }
+        };
+
+        new Chart(ctx, config);
+    </script>
+</head>
+<body>
+
+    <h1>Spaghetti Diagram - Get My Degree</h1>
+    
+    <div class="diagram-container">
+        <div class="step" id="step1">Start Application</div>
+        <div class="step" id="step2">Meet Advisor</div>
+        <div class="step" id="step3">Attend Classes</div>
+        <div class="step" id="step4">Library/Research</div>
+        <div class="step" id="step5">Submit Assignments</div>
+        <div class="step" id="step6">Check Grades</div>
+        <div class="step" id="step7">Final Research</div>
+        <div class="step" id="step8">Apply for Graduation</div>
+        <div class="step" id="step9">🎓 Graduate!</div>
+
+        <svg>
+            <!-- Spaghetti Paths (Messy, tangled lines) -->
+            <path d="M 70 60 C 120 80, 180 100, 270 140"></path>
+            <path d="M 270 140 C 400 160, 450 100, 520 80"></path>
+            <path d="M 520 80 C 550 140, 570 180, 620 160"></path>
+            <path d="M 620 160 C 670 200, 720 250, 720 270"></path>
+            <path d="M 720 270 C 700 330, 600 350, 500 340"></path>
+            <path d="M 500 340 C 400 320, 350 400, 250 420"></path>
+            <path d="M 250 420 C 180 440, 140 470, 100 460"></path>
+            <path d="M 100 460 C 50 400, 80 320, 120 280"></path>
+            <path d="M 120 280 C 170 250, 250 250, 350 280"></path>
+            <path d="M 350 280 C 450 300, 550 350, 600 400"></path>
+            <path d="M 600 400 C 650 430, 720 420, 720 300"></path>
+            <path d="M 720 300 C 720 200, 650 150, 500 120"></path>
+            <path d="M 500 120 C 350 80, 200 70, 70 60"></path>
+        </svg>
+    </div>
+
+</body>
+</html>

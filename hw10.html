@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 10</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+<body>
+     <h1>Homework 10: Q.1</h1>
+     <h2>**Here is the link to this demo page: <a href="http://moni7310.fwh.is/javascript_demo_page_own.php">Visit the PHP Demo Page</a></h2>
+     <h1>**Question-2:PHP (i) Socratic Questions with AI:</h1>
+<p><strong>Me:</strong> Why is it so hard to run PHP by clicking a button in a web page? Teach me about this using Socratic questioning. You ask me questions and I will try to answer them. Give me background information as needed to help me think about how to answer the questions.</p>
+    <p><strong>ChatGpt:</strong> Alright! Let’s go through this step by step using Socratic questioning to help you discover the answer yourself.</p>
+    <p><strong>Background Information:</strong></p>
+<p>To understand why running PHP by clicking a button in a web page is difficult, let’s break down how PHP and JavaScript work:</p>
+
+<p>- PHP is a server-side language. This means that PHP runs on the web server before the page is sent to the browser.</p>
+
+<p>- JavaScript is a client-side language, meaning it runs in the browser after the page has loaded.</p>
+
+<p>- HTML is just a static structure, so it doesn’t execute any logic on its own.</p>
+
+<p>Now, let’s begin our Socratic dialogue:<br></p>
+Socratic Questioning:</br></p>
+<p>1. Where does PHP code execute—on the client (browser) or on the server?</p>
+
+<p>2. When a web page is loaded in a browser, is PHP still running, or has it already finished executing?
+(Think about whether PHP can still run once the page is displayed.)</p>
+
+<p>3. If PHP has already run and the page is loaded in the browser, what happens if you click a button?</p>
+
+<p>4. Since PHP runs on the server, how can the browser send a request to the server to execute PHP after the page has loaded?</p>
+
+<p>5. What tool or technique allows JavaScript to send data to a server and receive a response without reloading the page?</p>
+
+<p>6. If JavaScript can send a request to a PHP script on the server, how can the server respond back with data?</p>
+<p><strong>Me:</strong> Answering question 1: PHP code executes on the server. Please ask me one question at a time.</p>
+<p><strong>ChatGpt:</strong> Great! Now, let's move to the next question:</p>
+
+<p>2. When a web page is loaded in a browser, is PHP still running, or has it already finished executing?</p>
+<p><strong>Me:</strong>Give me a hint please</p>
+<p><strong>ChatGpt:</strong>Hint: PHP runs on the server before the page reaches your browser. Once the page is displayed in the browser, what is actually being shown—PHP code or something else?</p>
+<p><strong>Me:</strong>I think something else not php code is it right answer?</p>
+<p><strong>ChatGpt:</strong>Yes, that's correct! The browser only sees the output of the PHP code, not the PHP code itself.</p>
+
+<p>Now, here's the next question: Since PHP runs on the server, but JavaScript runs in the browser, what happens if you try to trigger PHP code directly from a button using JavaScript?</p>
+<p><strong>Me:</strong>I am not sure! could you give me a hint?</p>
+<p><strong>ChatGpt:</strong>Absolutely! Here's a hint:</p>
+
+<p>👉 JavaScript runs in your browser (on your computer), while PHP runs on the web server (on the hosting provider’s computer).
+So JavaScript can’t just “run” PHP directly — they live in different places.</p>
+
+<p>With that in mind, can you think of a way that JavaScript might communicate with the server to ask it to run PHP? (Hint: think about how websites send and receive data without reloading the page.)</p>
+<p><strong>Me:</strong>If PHP has already run and the page is loaded in the browser, clicking a button doesn't automatically trigger PHP code again. PHP operates on the server, so any new interaction from the browser, like clicking a button, must send a request back to the server for PHP to execute.</p>
+<p><strong>ChatGpt:</strong>That's exactly right! Since PHP runs before the page is sent to the browser, clicking a button alone doesn’t trigger it again. Instead, the browser needs to send a request to the server, asking it to run the PHP code.</p>
+
+<p>Now, let’s think about this:</p>
+<p>👉 How can a browser send a request back to the server without reloading the entire page? (Hint: Websites use this technique to fetch new data dynamically.)</p>
+<p><strong>Me:</strong>I don't know. Can you tell me one, in simple terms?</p>
+<p><strong>ChatGpt:</strong>Sure! One way to send a request to the server without reloading the entire page is AJAX (Asynchronous JavaScript and XML).</p>
+
+<p>Simple Explanation:</p>
+<p>JavaScript sends a request to the server when you click a button.</p>
+
+<p>The server runs the PHP code and sends back the result.</p>
+
+<p>JavaScript updates the web page with the result, without reloading.</p>
+
+<p>Would you like a simple example of how this works with JavaScript and PHP? 😊</p>
+<p><strong>Me:</strong>Yes, please!</p>
+<p><strong>ChatGpt:</strong>Great! Here’s a simple example of how to run PHP when a button is clicked using AJAX.</p>
+
+<p>Steps:</p>
+<p>1. Create a PHP file (process.php) that will run when requested.</p>
+<p>2. Modify your main page (demo.php) to send a request to process.php when a button is clicked.</p>
+<p>How This Works:<br></br>
+When you click the button, runPHP() runs.</p>
+
+<p>JavaScript (AJAX) sends a request to process.php.</p>
+<p>process.php runs its PHP code and sends back "Hello! This message is from PHP."</p>
+<p>JavaScript updates <p id="output" >with the response from PHP.</p>
+<p><strong>Me:</strong> Okay,let's move to the next question</p>
+<p><strong>ChatGpt:</strong> Great! Let's continue.</p>
+<p>Question 3: Since PHP runs on the server, and clicking a button happens in the browser, how do you think we can make the browser communicate with the server to trigger PHP code?</p>
+<p><strong>Me:</strong> Please give me a hint.</p>
+<p><strong>ChatGpt:</strong> Hint: How do modern web applications update data dynamically without refreshing?</p>
+<p><strong>Me:</strong> Modern web applications update data dynamically without refreshing by using AJAX and other real-time technologies. These approaches allow websites to fetch new data from the server asynchronously and update specific parts of the page without requiring a full reload.</p>
+<p><strong>ChatGpt:</strong> Exactly! AJAX (Asynchronous JavaScript and XML) is a key technology that allows us to send requests to the server without reloading the page.
+Now, considering this, how could we use AJAX to trigger a PHP script when a button is clicked?</p>
+<p><strong>Me:</strong> We can use AJAX to trigger a PHP script when a button is clicked by setting up JavaScript to make an HTTP request to the server where the PHP script resides.</p>
+<p><strong>ChatGpt:</strong> Correct! The JavaScript code can send a request (often using XMLHttpRequest or fetch()) to a PHP script on the server.</p>
+<p><strong>Me:</strong> When the PHP script receives a request from JavaScript, its primary job is to process the request, perform any necessary server-side operations, and prepare a response to send back to the browser.</p>
+ <p><strong>ChatGpt:</strong> Great! Now, Question 4, The tool or technique that allows JavaScript to send data to a server and receive a response without reloading the page is AJAX (Asynchronous JavaScript and XML).</p>
+<p>Would you like a brief explanation of how AJAX works in this scenario?</p>
+<p><strong>Me:</strong> Sure! AJAX allows JavaScript to send a request to the server (e.g., to run PHP) and receive a response, all without reloading the page. The server processes the request, and JavaScript dynamically updates the webpage based on the server's response.</p>
+<p><strong>ChatGpt:</strong> Yes, that's exactly right! 🙌</p>
+<p>To break it down one more time for clarity:</p>
+<p>1. JavaScript (using AJAX) sends a request to the server.</p>
+
+<p>2. The server runs the PHP script and prepares a response (like data from a database, a message, or a calculation).</p>
+
+<p>3. The response is sent back to the JavaScript code.</p>
+
+<p>4. JavaScript updates the page (like showing the result to the user), all without refreshing.</p>
+<p>You're really getting the hang of this! 🎯 Want to try creating a simple example next?</p>
+<p><strong>Me:</strong> No, Move on to the last question.</p>
+<p><strong>ChatGpt:</strong> Ok, the last question is 'If JavaScript can send a request to a PHP script on the server, how can the server respond back with data?' And Here's your hint for the last question:</p>
+
+<p>👉 Think about what the PHP script does after it finishes processing the request. How can it communicate back with the browser? What kind of output or message might it send?</p>
+
+<p>This might involve something very familiar in PHP...</p>
+<p>Can you think of a PHP command that outputs text or data?</p>
+<p><strong>Me:</strong> The PHP command you're hinting at is . After processing a request, the PHP script can use  to output text, data, or a formatted response like JSON. This output is then sent back to the browser, where JavaScript can handle it and update the page dynamically.</p>
+<p><strong>ChatGpt:</strong> 🎉 Exactly right!</p>
+
+<p>Yes — the PHP command you're thinking of is echo. After the server receives a request (via AJAX, for example), the PHP script can use echo to send back data — whether it's plain text, HTML, or JSON.</p>
+
+<p>🔁 Here’s how the full flow works:<br></br></p>
+
+<p>1. JavaScript (AJAX) sends a request to the server.</p>
+
+<p>2. PHP processes the request and uses echo to return a response.</p>
+
+<p>3. JavaScript receives the response and dynamically updates the page without refreshing.</p>
+
+<p>You’ve successfully thought through why it’s hard to run PHP by just clicking a button, and more importantly — how modern tools like AJAX help us do that anyway!</p>
+
+<p>If you’d like, I can show you a small example combining JavaScript and PHP to do this — just say the word.</p><br>
+</br>
+<h1>**Homework 10: Q.3-PHP (ii).</h1>
+<p>Here are the answers filled into the table format based on the question:</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript, PHP, and HTML Comparison Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        h2 {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Comparison of JavaScript, PHP, and HTML</h1>
+
+<!-- Section (a) When it runs -->
+<h2>a. When it runs</h2>
+<table>
+    <tr>
+        <th>JavaScript</th>
+        <th>PHP</th>
+        <th>HTML</th>
+    </tr>
+    <tr>
+        <td><strong>Similarities to PHP:</strong> Both can generate dynamic content.</td>
+        <td><strong>Similarities to JavaScript:</strong> Both are scripting languages.</td>
+        <td><strong>Similarities to PHP & JS:</strong> All contribute to web development.</td>
+    </tr>
+    <tr>
+        <td><strong>Differences from PHP:</strong> Runs on the client-side in the browser.</td>
+        <td><strong>Differences from JavaScript:</strong> Runs on the server-side before sending output to the browser.</td>
+        <td><strong>Differences from PHP & JS:</strong> HTML is static and does not execute logic.</td>
+    </tr>
+</table>
+
+<!-- Section (b) Web page suffixes -->
+<h2>b. Web page suffixes</h2>
+<table>
+    <tr>
+        <th>JavaScript</th>
+        <th>PHP</th>
+        <th>HTML</th>
+    </tr>
+    <tr>
+        <td><strong>Similarities to PHP:</strong> Included in web pages.</td>
+        <td><strong>Similarities to JavaScript:</strong> Used in dynamic web pages.</td>
+        <td><strong>Similarities to PHP & JS:</strong> All are part of web development.</td>
+    </tr>
+    <tr>
+        <td><strong>Differences from PHP:</strong> JavaScript files use `.js`.</td>
+        <td><strong>Differences from JavaScript:</strong> PHP files use `.php`.</td>
+        <td><strong>Differences from PHP & JS:</strong> HTML files use `.html` or `.htm`.</td>
+    </tr>
+</table>
+
+<!-- Section (c) Support for interacting with users -->
+<h2>c. Support for interacting with users</h2>
+<table>
+    <tr>
+        <th>JavaScript</th>
+        <th>PHP</th>
+        <th>HTML</th>
+    </tr>
+    <tr>
+        <td><strong>Similarities to PHP:</strong> Can process user input.</td>
+        <td><strong>Similarities to JavaScript:</strong> Can handle form data and user interactions.</td>
+        <td><strong>Similarities to PHP & JS:</strong> Used together for user interactions.</td>
+    </tr>
+    <tr>
+        <td><strong>Differences from PHP:</strong> Runs directly in the browser.</td>
+        <td><strong>Differences from JavaScript:</strong> Runs on the server and does not directly update the UI.</td>
+        <td><strong>Differences from PHP & JS:</strong> HTML only defines structure, not interactions.</td>
+    </tr>
+</table>
+
+<!-- Section (d) Start & end tags -->
+<h2>d. Start & end tags</h2>
+<table>
+    <tr>
+        <th>JavaScript</th>
+        <th>PHP</th>
+        <th>HTML</th>
+    </tr>
+    <tr>
+        <td><strong>Similarities to PHP:</strong> Uses opening `<script>` and closing `</script>` tags.</td>
+        <td><strong>Similarities to JavaScript:</strong> Uses `<?php ?>` tags to enclose code.</td>
+        <td><strong>Similarities to PHP & JS:</strong> HTML uses tags `<html>`, `<body>`, etc.</td>
+    </tr>
+    <tr>
+        <td><strong>Differences from PHP:</strong> JavaScript does not require special server-side processing.</td>
+        <td><strong>Differences from JavaScript:</strong> PHP must be enclosed within `<?php ?>` to be processed.</td>
+        <td><strong>Differences from PHP & JS:</strong> HTML tags define structure, not logic.</td>
+    </tr>
+</table>
+
+<!-- Section (e) Semicolon ";" -->
+<h2>e. Semicolon ";"</h2>
+<table>
+    <tr>
+        <th>JavaScript</th>
+        <th>PHP</th>
+        <th>HTML</th>
+    </tr>
+    <tr>
+        <td><strong>Similarities to PHP:</strong> JavaScript and PHP both use `;` to end statements.</td>
+        <td><strong>Similarities to JavaScript:</strong> PHP also requires `;` to terminate lines of code.</td>
+        <td><strong>Similarities to PHP & JS:</strong> Both PHP and JS use `;`, but HTML does not.</td>
+    </tr>
+    <tr>
+        <td><strong>Differences from PHP:</strong> In JavaScript, semicolons are optional in some cases.</td>
+        <td><strong>Differences from JavaScript:</strong> In PHP, semicolons are mandatory at the end of each statement.</td>
+        <td><strong>Differences from PHP & JS:</strong> HTML does not use `;` at all since it is not a programming language.</td>
+    </tr>
+</table>
+
+</body>
+</html>
+<h1>**Question-4. Lean Six Sigma (a):</h1>
+<h2>a. What does DMAIC stand for?</h2>
+<p>DMAIC is a data-driven problem-solving methodology used in Lean Six Sigma (LSS) to improve processes. It stands for:</p>
+
+<p>Define – Identify the problem and project goals.</p>
+
+<p>Measure – Collect data to understand the current state.</p>
+
+<p>Analyze – Identify root causes of defects and inefficiencies.</p>
+
+<p>Improve – Develop and implement solutions to address the problem.</p>
+
+<p>Control – Maintain improvements and prevent regression.</p>
+
+<h2>b. Socratic Dialogue on LSS Waste</h2>
+<p>The AI name: ChatGPT</p>
+<p>The prompt used:</p>
+
+<p>"Teach me about waste in Lean Six Sigma using Socratic questioning. Ask me questions to guide my understanding, and give me hints if I struggle to answer."</p>
+<p><strong>AI: </strong> Question-1. What do you think "waste" means in the context of Lean Six Sigma?</p>
+<p><strong>Me: </strong> It might mean inefficiency or unnecessary steps?</p>
+<p><strong>AI: </strong> Exactly! Waste refers to anything that does not add value to the customer.</p>
+<p> Now, question 2. Can you think of some types of waste that might exist in a business process?</p>
+<p><strong>Me: </strong>  Maybe delays or mistakes?</p>
+<p><strong>AI: </strong> Yes! Delays (waiting) and mistakes (defects) are two types of waste. There are eight types in total—can you guess a few more?</p>
+<p>Q.3. What happens when too much inventory is stored? Is that wasteful?</p>
+<p><strong>Me: </strong> Yes, because it takes up space and might not be used?</p>
+<p><strong>AI: </strong> Correct! Excess inventory ties up money and can lead to obsolescence.</p>
+<p><strong>AI: </strong> Q-4. If employees have to move around a lot to do their job, could that be considered waste?</p>
+<p><strong>Me: </strong> Yes, because it wastes time?</p>
+<p><strong>AI: </strong> Right! This is called motion waste—excess movement that does not add value.</p>
+<p>Q-5. What happens when a worker produces more than what is needed at that time?</p>
+<p><strong>Me: </strong>  That could lead to extra storage or wasted effort?</p>
+<p><strong>AI: </strong>  Exactly! That’s overproduction waste, making more than necessary.</p>
+<p>Q-6. How do errors or defects in a process contribute to waste?</p>
+<p><strong>Me: </strong> They require rework, which wastes time and resources?</p>
+<p><strong>AI: </strong> Yes! Defects waste results in rework, customer dissatisfaction, and extra costs.</p>
+<p>Q-7. Have you ever had to wait in a long line for a service? How does that relate to waste?</p>
+<p><strong>Me: </strong> It means people are waiting instead of getting what they need?</p>
+<p><strong>AI: </strong> Right! Waiting waste occurs when work is delayed due to bottlenecks or slow processes.</p>
+<p>Q-8. Now, tell me If a company has employees performing unnecessary steps, how does that impact efficiency?</p>
+<p><strong>Me: </strong> It slows things down and makes work harder?</p>
+<p><strong>AI: </strong> Exactly! That’s extra processing waste—doing more work than needed.</p>
+<p>Q-9. How does underutilizing employees' skills contribute to waste?</p>
+<p><strong>Me: </strong> If they have good ideas or abilities but aren’t using them, it’s wasted potential?</p>
+<p><strong>AI: </strong> Correct! This is underutilized talent waste, a newer addition to Lean’s waste categories.</p>
+<p>Q-10. Can you summarize the eight types of waste in Lean Six Sigma?</p>
+<p><strong>Me: </strong> Defects, Overproduction, Waiting, Non-Utilized Talent, Transportation, Inventory, Motion, Extra Processing.</p>
+<p><strong>AI: </strong> Perfect!🎉 You just learned DOWNTIME, an acronym to remember the eight wastes!</p><br>
+</br>
+<h1>**Question-5. Progress about my Sunset Project</h1>
+
+<section id="project-reflection">
+  <h2>Project Reflection: Sunset Social Media Page</h2>
+  <p>
+       I created the Sunset Social Media page as a new addition to my existing website. 
+    Instead of building an entirely separate website, I integrated this social media-themed page into my current site to maintain consistency and reuse my existing structure and styles.
+    I wanted to design the page from scratch so that I could structure it exactly the way I envisioned — with a clean, sunset-themed layout and simple social media features.
+    I wanted to build something original that reflected both my creativity and understanding of HTML and JavaScript.
+  </p>
+  <p>
+    To give it a functional and interactive look and feel, I added several components:
+    <ul>
+      <li>An <strong>Upload & Share</strong> button that mimics a post feature.</li>
+      <li>A <strong>Choose File</strong> button to simulate uploading sunset images.</li>
+      <li>Several <strong>sunset images</strong> are displayed as recent posts.</li>
+      <li><strong>Like</strong> and <strong>Comment</strong> buttons for user interaction simulation.</li>
+    </ul>
+    These elements help give the impression of a real social media platform, even though they don’t perform database or backend tasks.
+  </p>
+  <p>I also added <strong>CSS styling and a sunset-themed animation</strong> at the top of the page to enhance the visual appeal.</p>
+  <p>
+    Overall, my improvements focused on enhancing the user interface and making it visually resemble a working social media platform, while keeping it simple and based on HTML, CSS, and JavaScript.
+  </p>
+   <p>
+    This project helped me understand how user interfaces are structured and styled, even when they aren’t yet connected to backend functionality. 
+    I enjoyed creating the user experience flow and making the page feel like a real social media site, even though it's only a front-end mockup.
+  </p>
+</section>
+
+<h2><a href="http://moni7310.fwh.is/sunset_social.html"> Click here to see my Sunset Social Media Site. <a></h2>
+<h3><a href="http://moni7310.fwh.is/index.html">Go Back to Homepage</a></h3>
+       
+</body>
+</head>

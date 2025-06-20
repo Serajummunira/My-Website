@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW4 - Form Components</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            background-color: #0073e6;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>HW4: Q-1. Form Components</h1>
+        
+        <form action="https://www.w3schools.com/action_page.php" method="post">
+            <p>📌 Below are more than 15 different form components:</p>
+
+            <ol>
+                <li>
+                    <label for="name"> Text Input (Name):</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name">
+                </li>
+                
+            <li>
+            <div class="form-element">
+                <label for="university">University:</label>
+                <input type="text" id="university" name="university" value="University of Arkansas at Little Rock (UALR)">
+            </div>
+                </li>
+            <li> 
+            <h3>Date Field Restrictions:</h3>
+
+<p>Use the min and max attributes to add restrictions to dates:</p>
+
+<form action="https://www.w3schools.com/action_page.php">
+  <label for="datemin">Enter a date after 2000-01-01:</label>
+  <input type="date" id="datemin" name="datemin" min="2000-01-02"><br><br>
+
+  <label for="datemax">Enter a date before 1970-01-01:</label>
+  <input type="date" id="datemax" name="datemax" max="1969-12-31"><br><br>
+  
+  <input type="submit" value="Submit">
+</form>
+            </li>
+
+                <li>
+                   <h3>Password field:</h3>
+
+<p>The <strong>input type="password"</strong> defines a password field:</p>
+
+<form action="https://www.w3schools.com/action_page.php">
+  <label for="username">Username:</label><br>
+  <input type="text" id="username" name="username"><br>
+  <label for="pwd">Password:</label><br>
+  <input type="password" id="pwd" name="pwd"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<p>The characters in a password field are masked (shown as asterisks or circles).</p>
+
+                </li>
+
+                <li>
+                    <label for="gender"> Radio Buttons (Gender):</label>
+                    <input type="radio" id="male" name="gender" value="male"> Male
+                    <input type="radio" id="female" name="gender" value="female"> Female
+                </li>
+
+                <li>
+                    <label for="hobbies"> Checkboxes (Hobbies):</label>
+                    <input type="checkbox" id="sports" name="hobby" value="sports"> Sports
+                    <input type="checkbox" id="music" name="hobby" value="music"> Music
+                    <input type="checkbox" id="reading" name="hobby" value="reading"> Reading
+                </li>
+                <li>
+                <h3>The select Element:</h3>
+<p>The select element defines a drop-down list:</p>
+
+<form action="/action_page.php">
+  <label for="cars">Choose a car:</label>
+  <select id="cars" name="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+  </select>
+</form>
+                </li>
+                <li>
+                    <label for="country"> Dropdown (Select Country):</label>
+                    <select id="country" name="country">
+                        <option value="usa">United States</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="canada">Canada</option>
+                    </select>
+                </li>
+
+                <li>
+                    <label for="message"> Textarea (Feedback):</label>
+                    <textarea id="message" name="message" rows="4" placeholder="HTML is the standard markup language for creating Web pages.HTML stands for Hyper Text Markup Language..."></textarea>
+                </li>
+                <li> 
+                <h3>A Hidden Field (look in source code):</h3>
+
+<form action="https://www.w3schools.com/action_page.php">
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <input type="hidden" id="custId" name="custId" value="3487">
+  <input type="submit" value="Submit">
+</form>
+<p><strong>Note:</strong> The hidden field is not shown to the user, but the data is sent when the form is submitted.</p>
+                </li>
+                <li> 
+                <h3>The button Element:</h3>
+<button type="button" onclick="alert('Hello Everyone! How are you doing today?')">Click Me!</button>
+                </li>
+                <li>
+<h3>The datalist Element:</h3>
+<p>The datalist element specifies a list of pre-defined options for an input element.</p>
+<form action="https://www.w3schools.com/action_page.php">
+  <input list="browsers" name="browser">
+  <datalist id="browsers">
+    <option value="Edge">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+  </datalist>
+  <input type="submit">
+</form>
+                </li>
+                <li> 
+                <h3>Show a Color Picker:</h3>
+<p>The <strong>input type="color"</strong> is used for input fields that should contain a color.</p>
+
+<form action="https://www.w3schools.com/action_page.php">
+  <label for="favcolor">Select your favorite color:</label>
+  <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+  <input type="submit" value="Submit">
+</form>
+                </li>
+                <li> 
+        <h3>The output Element:</h3>
+<p>The output element represents the result of a calculation.</p>
+
+<form action="https://www.w3schools.com/action_page.php"
+oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+  0
+  <input type="range" id="a" name="a" value="50">
+  100 +
+  <input type="number" id="b" name="b" value="50">
+  =
+  <output name="x" for="a b"></output>
+  <br><br>
+  <input type="submit">
+</form>
+                </li>
+<li> 
+    <h3>Telephone Field</h3>
+
+<p>The <strong>input type="tel"</strong> is used for input fields that should contain a telephone number:</p>
+
+<form action="https://www.w3schools.com/action_page.php">
+  <label for="phone">Enter a phone number:</label><br><br>
+  <input type="tel" id="phone" name="phone" placeholder="123-456-6789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br><br>
+  <small>Format: 123-456-6789</small><br><br>
+  <input type="submit" value="Submit">
+</form>
+</li>
+                <li>
+                    <div class="form-element">
+                <label for="salary">Expected Salary Range:</label>
+                <input type="range" id="salary" name="salary" min="30000" max="150000">
+            </div>
+                </li>
+
+                <li>
+                    <label for="submit"> Submit Button:</label>
+                    <input type="submit" class="btn" value="Submit Form">
+                </li>
+
+                <li>
+                    <strong> Action Attribute:</strong> <br>
+                    The form submits data to: <code>action="https://www.w3schools.com/action_page.php"</code>
+                </li>
+            </ol>
+             <h2>Submit Your Name</h2>
+    <form action="https://www.w3schools.com/action_page.php" method="get">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="Serajum Munira">
+        <input type="submit" value="Submit">
+    </form>
+
+    </div>
+    
+    <a href="index.html">Back to Homepage</a>
+
+
+</body>
+</html>

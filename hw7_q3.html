@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master's Degree Project Plan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #2c3e50;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        .progress {
+            background-color: #3498db;
+            color: white;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Q3-A.</h1>
+    <h2>Master's Degree Project Plan</h2>
+
+    <h3>📌 Brief Format Use Case</h3>
+    <p><strong>Use Case Name:</strong> Completing a Master's Degree Project</p>
+    <p><strong>Actors:</strong> Graduate Student, Faculty Advisor, Committee Members</p>
+    <p><strong>Goal:</strong> Successfully complete and submit a master's degree project</p>
+    <p><strong>Preconditions:</strong> 
+        <ul>
+            <p>**Admission to a master's program</p>
+            <p>**Approval of research topic</p>
+            <p>**Advisor assigned</p>
+        </ul>
+    </p>
+
+    <h3>🛠 Steps to Completion:</h3>
+    
+        <p>1. Define Project Scope & Proposal</p>
+        <p>2. Conduct Research & Data Collection</p>
+        <p>3. Analyze and Interpret Results</p>
+        <p>4. Write & Revise the Report</p>
+        <p>5. Submit & Defend the Project</p>
+        <p>6. Final Submission & Graduation Approval</p>
+    
+
+    <h3>📅 Gantt Chart: Project Timeline</h3>
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Duration</th>
+            <th>Dependencies</th>
+            <th>Progress</th>
+        </tr>
+        <tr>
+            <td>Research Topic Selection</td>
+            <td>2 weeks</td>
+            <td>None</td>
+            <td class="progress">✅ Completed</td>
+        </tr>
+        <tr>
+            <td>Proposal Writing & Approval</td>
+            <td>4 weeks</td>
+            <td>Topic Selection</td>
+            <td class="progress">🟡 In Progress</td>
+        </tr>
+        <tr>
+            <td>Data Collection & Experimentation</td>
+            <td>8 weeks</td>
+            <td>Proposal Approval</td>
+            <td>⬜ Not Started</td>
+        </tr>
+        <tr>
+            <td>Data Analysis & Interpretation</td>
+            <td>6 weeks</td>
+            <td>Data Collection</td>
+            <td>⬜ Not Started</td>
+        </tr>
+        <tr>
+            <td>Report Writing (Initial Draft)</td>
+            <td>6 weeks</td>
+            <td>Analysis</td>
+            <td>⬜ Not Started</td>
+        </tr>
+        <tr>
+            <td>Revisions & Feedback</td>
+            <td>4 weeks</td>
+            <td>Initial Draft</td>
+            <td>⬜ Not Started</td>
+        </tr>
+        <tr>
+            <td>Final Submission & Defense Preparation</td>
+            <td>3 weeks</td>
+            <td>Revised Draft</td>
+            <td>⬜ Not Started</td>
+        </tr>
+        <tr>
+            <td>Defense & Final Submission</td>
+            <td>2 weeks</td>
+            <td>Defense Preparation</td>
+            <td>⬜ Not Started</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive PERT Chart</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        .chart-container {
+            width: 100%;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .tooltip {
+            position: absolute;
+            text-align: center;
+            width: 120px;
+            height: auto;
+            padding: 8px;
+            font-size: 14px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            pointer-events: none;
+            opacity: 0;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+<h2>📊 Interactive PERT Chart - Master's Project</h2>
+<p>Drag, zoom, and hover over nodes for details!</p>
+<div class="chart-container">
+    <svg width="800" height="500"></svg>
+</div>
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+// Define nodes (tasks)
+const nodes = [
+    { id: "A", name: "Research Topic Selection", x: 100, y: 50, color: "#ff6f61" },
+    { id: "B", name: "Proposal Writing & Approval", x: 300, y: 50, color: "#ffcc29" },
+    { id: "C", name: "Data Collection", x: 500, y: 50, color: "#17a2b8" },
+    { id: "D", name: "Data Analysis", x: 700, y: 50, color: "#6f42c1" },
+    { id: "E", name: "Initial Report Draft", x: 300, y: 200, color: "#28a745" },
+    { id: "F", name: "Revisions & Feedback", x: 500, y: 200, color: "#e83e8c" },
+    { id: "G", name: "Final Submission", x: 700, y: 200, color: "#007bff" },
+    { id: "H", name: "Defense & Graduation", x: 500, y: 350, color: "#343a40" }
+];
+
+// Define links (dependencies)
+const links = [
+    { source: "A", target: "B" },
+    { source: "B", target: "C" },
+    { source: "C", target: "D" },
+    { source: "B", target: "E" },
+    { source: "E", target: "F" },
+    { source: "F", target: "G" },
+    { source: "D", target: "G" },
+    { source: "G", target: "H" }
+];
+
+// Create the SVG canvas
+const svg = d3.select("svg")
+    .append("g")
+    .attr("transform", "translate(50,50)");
+
+// Create a simulation for drag behavior
+const simulation = d3.forceSimulation(nodes)
+    .force("link", d3.forceLink(links).id(d => d.id).distance(120))
+    .force("charge", d3.forceManyBody().strength(-500))
+    .force("center", d3.forceCenter(350, 200))
+    .on("tick", ticked);
+
+// Create links
+const link = svg.selectAll("line")
+    .data(links)
+    .enter()
+    .append("line")
+    .attr("stroke", "#ccc")
+    .attr("stroke-width", 2);
+
+// Create nodes
+const node = svg.selectAll("circle")
+    .data(nodes)
+    .enter()
+    .append("circle")
+    .attr("r", 20)
+    .attr("fill", d => d.color)
+    .call(d3.drag()
+        .on("start", dragStart)
+        .on("drag", dragged)
+        .on("end", dragEnd)
+    );
+
+// Add tooltips
+const tooltip = d3.select("#tooltip");
+
+node.on("mouseover", (event, d) => {
+    tooltip.transition().duration(200).style("opacity", 1);
+    tooltip.html(d.name)
+        .style("left", (event.pageX + 10) + "px")
+        .style("top", (event.pageY - 10) + "px");
+})
+.on("mouseout", () => {
+    tooltip.transition().duration(500).style("opacity", 0);
+});
+
+// Add labels
+const labels = svg.selectAll("text")
+    .data(nodes)
+    .enter()
+    .append("text")
+    .attr("dy", 4)
+    .attr("text-anchor", "middle")
+    .attr("font-size", "12px")
+    .attr("fill", "white")
+    .text(d => d.id);
+
+// Tick function to update positions
+function ticked() {
+    link
+        .attr("x1", d => d.source.x)
+        .attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x)
+        .attr("y2", d => d.target.y);
+
+    node
+        .attr("cx", d => d.x)
+        .attr("cy", d => d.y);
+
+    labels
+        .attr("x", d => d.x)
+        .attr("y", d => d.y + 4);
+}
+
+// Drag functions
+function dragStart(event, d) {
+    if (!event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+}
+
+function dragged(event, d) {
+    d.fx = event.x;
+    d.fy = event.y;
+}
+
+function dragEnd(event, d) {
+    if (!event.active) simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+}
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Similarity Rating</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            text-align: center;
+            margin: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Q3-B</h1>
+    <h2>🔍 AI Similarity Rating for Brief Format Use Case</h2>
+    <p><strong>AI-generated similarity rating:</strong> <span id="rating">Checking...</span>%</p>
+    <p><em>This rating was obtained using a free AI detection tool.</em></p>
+</div>
+
+<script>
+    document.getElementById("rating").innerText = "30";  
+</script>
+
+</body>
+</html>

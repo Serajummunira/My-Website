@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FMEA and 5 Whys Analysis</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        h2 { color: #333; }
+        ul { margin-left: 20px; }
+    </style>
+</head>
+<body>
+    <h1><a href="hw4_form.html">Click here to view HW4 Q-1:Dictionary of HTML commands</a></h1>
+    <h1>Q-2. System Analyzed: Course Registration Process at UALR</h1>
+    <h2>Failure Mode Effects and Analysis (FMEA)</h2>
+    <p><strong>Failure Mode:</strong> Student is unable to register for a required course.</p>
+
+    <table>
+        <tr>
+            <th>Step in Process</th>
+            <th>Potential Failure Mode</th>
+            <th>Potential Causes</th>
+            <th>Effects of Failure</th>
+            <th>Detection Method</th>
+            <th>Severity (1-10)</th>
+            <th>Occurrence (1-10)</th>
+            <th>Detection (1-10)</th>
+            <th>Risk Priority Number (RPN)</th>
+        </tr>
+        <tr>
+            <td>Course Registration</td>
+            <td>Unable to register for a required course</td>
+            <td>Prerequisites not met, course full, system error, registration hold</td>
+            <td>Delay in graduation, missing prerequisites</td>
+            <td>Error message, advising support</td>
+            <td>8</td>
+            <td>6</td>
+            <td>5</td>
+            <td>240</td>
+        </tr>
+    </table>
+
+    <h3>Reasonable vs. Excluded Causes</h3>
+    <h4>Reasonable Causes:</h4>
+    <ul>
+        <li>Prerequisites not met</li>
+        <li>Course is full</li>
+        <li>Registration hold (unpaid fees, missing documents)</li>
+        <li>System error</li>
+    </ul>
+
+    <h4>Excluded Causes:</h4>
+    <ul>
+        <li>Student forgets to register (This is a user issue, not a system failure)</li>
+        <li>Internet outage (This is an external factor beyond the system’s control)</li>
+    </ul>
+
+    <h3>Suggested Improvements</h3>
+    <ul>
+        <li>Implement a waitlist system for high-demand courses.</li>
+        <li>Increase system capacity during peak registration times.</li>
+        <li>Send automated prerequisite alerts to students.</li>
+        <li>Enhance error messages to provide clearer guidance.</li>
+        <li>Introduce a **proactive advising notification system** to flag issues early.</li>
+    </ul>
+
+    <h1>Q-3. 5 Whys Technique Analysis</h1>
+    <ol>
+        <li><strong>Why couldn't the student register?</strong> → The system showed an error message.</li>
+        <li><strong>Why did the system show an error?</strong> → The student did not meet a prerequisite.</li>
+        <li><strong>Why didn’t the student meet the prerequisite?</strong> → The advising system did not notify them.</li>
+        <li><strong>Why didn’t the advising system notify them?</strong> → No automated prerequisite warning.</li>
+        <li><strong>Why isn’t there an automated warning?</strong> → The registration system lacks real-time checks.</li>
+    </ol>
+
+    <h3>Suggested Fixes Based on 5 Whys</h3>
+    <ul>
+        <li>Implement real-time prerequisite checking.</li>
+        <li>Provide automated alerts if a prerequisite is missing.</li>
+        <li>Require advisor approval for exceptions.</li>
+    </ul>
+
+    <h3>Final Thoughts</h3>
+    <p>
+        The **FMEA analysis** helps identify key failure modes, while the **5 Whys technique** uncovers the root cause. 
+        Both approaches highlight the **lack of real-time prerequisite checking** as a major issue.
+        The best way to mitigate this risk is to implement **proactive alerts** and **improve system capacity** 
+        to ensure students receive timely updates about their eligibility for courses.
+    </p>
+
+     <h1>Q-4. Comparison of 5 Whys and Failure Mode Effects Analysis (FMEA)</h1>
+
+    <h2>Applicability and Results</h2>
+
+    <h3>5 Whys Technique</h3>
+    <p>The 5 Whys technique is useful for identifying the root cause of a problem by repeatedly asking "Why?" until the fundamental issue is uncovered. 
+    It is a simple, qualitative method that works well for troubleshooting and solving specific, well-defined issues.</p>
+
+    <p>For example, if students face difficulties in UALR's course registration system, applying the 5 Whys may reveal that:</p>
+    <ol>
+        <li>Students are unable to register on time. <strong>Why?</strong></li>
+        <li>The registration portal is slow and crashes. <strong>Why?</strong></li>
+        <li>The system cannot handle high traffic. <strong>Why?</strong></li>
+        <li>The infrastructure has limited server capacity. <strong>Why?</strong></li>
+        <li>IT funding for server upgrades is insufficient.</li>
+    </ol>
+
+    <p><strong>Result:</strong> The main issue is insufficient IT funding, leading to poor server performance.</p>
+
+    <h3>Failure Mode Effects and Analysis (FMEA)</h3>
+    <p>FMEA is a structured, quantitative approach that systematically identifies potential failures, evaluates their severity, likelihood, and detection, and assigns a Risk Priority Number (RPN) to each issue.</p>
+
+    <p>For the same course registration issue, FMEA would involve:</p>
+    <ul>
+        <li><strong>Failure Mode:</strong> System crashes during peak registration.</li>
+        <li><strong>Effects:</strong> Delayed registration, frustrated students, administrative burden.</li>
+        <li><strong>Potential Causes:</strong> High traffic, outdated infrastructure, software bugs.</li>
+        <li><strong>Detection Methods:</strong> Load testing, error logs.</li>
+        <li><strong>Risk Priority Number (RPN):</strong> Calculated based on severity, occurrence, and detection ratings.</li>
+    </ul>
+
+    <p><strong>Result:</strong> Provides a structured risk assessment, prioritizing system upgrades and preventive actions.</p>
+
+    <h2>Comparison</h2>
+    <table border="1">
+        <tr>
+            <th>Aspect</th>
+            <th>5 Whys</th>
+            <th>FMEA</th>
+        </tr>
+        <tr>
+            <td>Approach</td>
+            <td>Simple, qualitative, direct questioning.</td>
+            <td>Systematic, quantitative risk assessment.</td>
+        </tr>
+        <tr>
+            <td>Use Case</td>
+            <td>Root cause analysis for specific problems.</td>
+            <td>Preventive analysis for potential failures.</td>
+        </tr>
+        <tr>
+            <td>Complexity</td>
+            <td>Easy to apply, requires minimal data.</td>
+            <td>Requires data, expertise, and structured evaluation.</td>
+        </tr>
+        <tr>
+            <td>Best For</td>
+            <td>Simple issues with clear causes.</td>
+            <td>Complex systems with multiple failure points.</td>
+        </tr>
+    </table>
+
+    <h2>Suitability for Different Problems</h2>
+
+    <p><strong>5 Whys is best for:</strong></p>
+    <ul>
+        <li>Quickly diagnosing operational problems.</li>
+        <li>Addressing human or process errors.</li>
+        <li>Small-scale issues with clear root causes.</li>
+    </ul>
+
+    <p><strong>FMEA is better suited for:</strong></p>
+    <ul>
+        <li>Engineering and technical systems (e.g., software failures).</li>
+        <li>Risk management in high-stakes environments (e.g., healthcare, aviation).</li>
+        <li>Large-scale processes where multiple failures need prioritization.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>Both techniques are useful but serve different purposes. 5 Whys is faster and more intuitive, making it ideal for troubleshooting individual problems. 
+    FMEA is more structured and effective for large, complex systems that require risk mitigation. 
+    For improving UALR’s course registration system, FMEA provides a better long-term solution, while 5 Whys helps in quick diagnostics.</p>
+    
+    <a href="http://moni7310.fwh.is/html_demo.html">Go to html_demo page to see HW4 Q-1<a>
+    <p><a href="index.html">Back to Homepage</a></p>
+    
+</body>
+</html>

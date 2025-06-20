@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Placement</title>
+    <script>
+        function greetFromHead() {
+            alert("Hello from the head section!");
+        }
+    </script>
+</head>
+<body>
+    <h2>JavaScript Placement in HTML</h2>
+
+    <h3>1. JavaScript in the &lt;head&gt; Section</h3>
+    <p>The function <code>greetFromHead()</code> is defined in the &lt;head&gt; section.</p>
+    <button onclick="greetFromHead()">Click Me (Head Script)</button>
+
+    <h3>2. JavaScript in the &lt;body&gt; Section</h3>
+    <p>The function <code>sayHello()</code> is defined in the &lt;body&gt; section.</p>
+    <button onclick="sayHello()">Click Me (Body Script)</button>
+
+    <script>
+        function sayHello() {
+            alert("Hello from the body section!");
+        }
+    </script>
+
+    <h3>3. JavaScript in Both &lt;head&gt; and &lt;body&gt;</h3>
+    <p>Both scripts in the head and body can coexist.</p>
+    
+    <h3>4. Using <code>defer</code> for Best Practice</h3>
+    <p>To load external JavaScript without blocking rendering, use the <code>defer</code> attribute:</p>
+    <pre>
+        &lt;script src="script.js" defer&gt;&lt;/script&gt;
+    </pre>
+    <h3>External JavaScript</h3>
+
+<p id="demo">My First JavaScript.</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+<p>This example uses a file path to link to "myScript.js".</p>
+<p>(myFunction is stored in "myScript.js")</p>
+
+<script src="https://www.w3schools.com/js/myScript.js"></script>
+
+
+</body>
+</html>

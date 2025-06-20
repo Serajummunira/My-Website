@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Commands Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .command-section {
+            margin-bottom: 20px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #gradientBox {
+            width: 300px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+<h1>Q.2-A:</h1>
+    <h2>JavaScript Commands Demo</h2>
+
+    <!-- 1. Weather Converter -->
+    <div class="command-section">
+        <p>1. Convert Fahrenheit to Celsius</p>
+        <input type="number" id="fahrenheit" placeholder="Enter Fahrenheit">
+        <button onclick="convertWeather()">Convert</button>
+        <p id="weatherResult"></p>
+    </div>
+
+    <!-- 2. Color Gradient Generator -->
+    <div class="command-section">
+        <p>2. Generate a Random Color Gradient</p>
+        <button onclick="generateGradient()">Apply Gradient</button>
+        <div id="gradientBox"></div>
+    </div>
+
+    <!-- 3. Countdown Timer -->
+    <div class="command-section">
+        <p>3. Countdown Timer</p>
+        <button onclick="startCountdown()">Start Countdown</button>
+        <p id="countdown"></p>
+    </div>
+
+    <!-- 4. Detect User's Timezone -->
+    <div class="command-section">
+        <p>4. Detect Your Timezone</p>
+        <button onclick="getTimezone()">Show Timezone</button>
+        <p id="timezone"></p>
+    </div>
+
+    <!-- 5. Show Battery Level -->
+    <div class="command-section">
+        <p>5. Show Device Battery Level</p>
+        <button onclick="getBatteryLevel()">Check Battery</button>
+        <p id="battery"></p>
+    </div>
+ 
+    <!-- 6. Detect Online or Offline Status -->
+    <div class="command-section">
+        <p>6. Check Internet Connection</p>
+        <button onclick="checkConnection()">Check Status</button>
+        <p id="connectionStatus"></p>
+    </div>
+
+    <!-- 7. Random Fact Generator -->
+    <div class="command-section">
+        <p>7. Generate a Random Fun Fact</p>
+        <button onclick="generateFact()">Get Fun Fact</button>
+        <p id="funFact"></p>
+    </div>
+
+    <!-- 8. Detect User's Browser -->
+    <div class="command-section">
+        <p>8. Detect Browser Information</p>
+        <button onclick="detectBrowser()">Detect Browser</button>
+        <p id="browserInfo"></p>
+    </div>
+
+    <!-- 9. Generate Random Number -->
+    <div class="command-section">
+        <p>9. Generate a Random Number</p>
+        <button onclick="generateRandomNumber()">Generate</button>
+        <p id="randomNumber"></p>
+    </div>
+
+    <!-- 10. Reverse Text Input -->
+    <div class="command-section">
+        <p>10. Reverse Text</p>
+        <input type="text" id="reverseInput" placeholder="Enter text">
+        <button onclick="reverseText()">Reverse</button>
+        <p id="reversedText"></p>
+    </div>
+    <div class="command-section">
+        <p>11. Convert Text to Uppercase</p>
+        <input type="text" id="textInput" placeholder="Type something...">
+        <button onclick="convertToUpper()">Uppercase</button>
+        <p id="upperText"></p>
+    </div>
+
+
+    <script>
+        // 1. Convert Fahrenheit to Celsius
+        function convertWeather() {
+            let fahrenheit = document.getElementById("fahrenheit").value;
+            let celsius = (fahrenheit - 32) * (5/9);
+            document.getElementById("weatherResult").innerHTML = `Celsius: ${celsius.toFixed(2)}°C`;
+        }
+
+        // 2. Generate Random Color Gradient
+        function generateGradient() {
+            let color1 = "#" + Math.floor(Math.random() * 16777215).toString(16);
+            let color2 = "#" + Math.floor(Math.random() * 16777215).toString(16);
+            document.getElementById("gradientBox").style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+        }
+
+        // 3. Countdown Timer
+        function startCountdown() {
+            let count = 5;
+            document.getElementById("countdown").innerHTML = count;
+            let interval = setInterval(() => {
+                count--;
+                document.getElementById("countdown").innerHTML = count;
+                if (count <= 0) {
+                    clearInterval(interval);
+                    document.getElementById("countdown").innerHTML = "Time's up!";
+                }
+            }, 1000);
+        }
+
+        // 4. Detect User's Timezone
+        function getTimezone() {
+            let timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            document.getElementById("timezone").innerHTML = `Your Timezone: ${timezone}`;
+        }
+
+        // 5. Show Device Battery Level
+        function getBatteryLevel() {
+            navigator.getBattery().then(battery => {
+                document.getElementById("battery").innerHTML = `Battery Level: ${Math.round(battery.level * 100)}%`;
+            });
+        }
+   function convertToUpper() {
+            let text = document.getElementById("textInput").value;
+            document.getElementById("upperText").innerHTML = text.toUpperCase();
+        }
+        // 6. Detect Internet Connection
+        function checkConnection() {
+            let status = navigator.onLine ? "Online" : "Offline";
+            document.getElementById("connectionStatus").innerHTML = `You are ${status}`;
+        }
+
+        // 7. Generate Random Fun Fact
+        function generateFact() {
+            let facts = [
+                "Bananas are berries, but strawberries are not.",
+                "Octopuses have three hearts.",
+                "Honey never spoils.",
+                "A day on Venus is longer than a year on Venus.",
+                "Wombat poop is cube-shaped!"
+            ];
+            let randomFact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById("funFact").innerHTML = randomFact;
+        }
+
+        // 8. Detect Browser Information
+        function detectBrowser() {
+            let userAgent = navigator.userAgent;
+            let browserName = "Unknown";
+            if (userAgent.includes("Chrome")) browserName = "Google Chrome";
+            else if (userAgent.includes("Firefox")) browserName = "Mozilla Firefox";
+            else if (userAgent.includes("Safari")) browserName = "Apple Safari";
+            else if (userAgent.includes("Edge")) browserName = "Microsoft Edge";
+            document.getElementById("browserInfo").innerHTML = `You are using: ${browserName}`;
+        }
+
+        // 9. Generate Random Number
+        function generateRandomNumber() {
+            let randomNum = Math.floor(Math.random() * 100) + 1;
+            document.getElementById("randomNumber").innerHTML = `Random Number: ${randomNum}`;
+        }
+
+        // 10. Reverse Input Text
+        function reverseText() {
+            let input = document.getElementById("reverseInput").value;
+            let reversed = input.split("").reverse().join("");
+            document.getElementById("reversedText").innerHTML = reversed;
+        }
+    </script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Commands Demo (Alphabetized)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .command-section {
+            margin-bottom: 20px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<h1>For Q-B:</h1>
+    <h2>JavaScript Commands Demo (Alphabetized)</h2>
+<h2><a href="hw7.html" class="button2 ">Click this link to see HW7-Q2-B</a></h2>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .command-section {
+            margin-bottom: 20px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #gradientBox {
+            width: 300px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+<h1>JavaScript Commands Demo (Alphabetized)</h1>
+
+<div class="command-section">
+        <p>1. Generate a Random Color Gradient</p>
+        <button onclick="generateGradient()">Apply Gradient</button>
+        <div id="gradientBox"></div>
+    </div>
+    <!-- 2. Weather Converter -->
+    <div class="command-section">
+        <p>2. Convert Fahrenheit to Celsius</p>
+        <input type="number" id="fahrenheit" placeholder="Enter Fahrenheit">
+        <button onclick="convertWeather()">Convert</button>
+        <p id="weatherResult"></p>
+    </div>
+    <!-- 3. Detect Online or Offline Status -->
+    <div class="command-section">
+        <p>3. Check Internet Connection</p>
+        <button onclick="checkConnection()">Check Status</button>
+        <p id="connectionStatus"></p>
+    </div>
+    <!-- 4. Show Battery Level -->
+    <div class="command-section">
+        <p>4. Show Device Battery Level</p>
+        <button onclick="getBatteryLevel()">Check Battery</button>
+        <p id="battery"></p>
+    </div>
+     <!-- 5. Detect User's Browser -->
+    <div class="command-section">
+        <p>5. Detect Browser Information</p>
+        <button onclick="detectBrowser()">Detect Browser</button>
+        <p id="browserInfo"></p>
+    </div>
+    <!-- 6. Random Fact Generator -->
+    <div class="command-section">
+        <p>6. Generate a Random Fun Fact</p>
+        <button onclick="generateFact()">Get Fun Fact</button>
+        <p id="funFact"></p>
+    </div>
+     <!-- 7. Generate Random Number -->
+    <div class="command-section">
+        <p>7. Generate a Random Number</p>
+        <button onclick="generateRandomNumber()">Generate</button>
+        <p id="randomNumber"></p>
+    </div>
+    <!-- 8. Reverse Text Input -->
+    <div class="command-section">
+        <p>8. Reverse Text</p>
+        <input type="text" id="reverseInput" placeholder="Enter text">
+        <button onclick="reverseText()">Reverse</button>
+        <p id="reversedText"></p>
+    </div>
+<!-- 9. Countdown Timer -->
+    <div class="command-section">
+        <p>9. Countdown Timer</p>
+        <button onclick="startCountdown()">Start Countdown</button>
+        <p id="countdown"></p>
+    </div>
+
+    <!-- 10. Detect User's Timezone -->
+    <div class="command-section">
+        <p>10. Detect Your Timezone</p>
+        <button onclick="getTimezone()">Show Timezone</button>
+        <p id="timezone"></p>
+    </div>
+     <div class="command-section">
+        <p>11. Convert Text to Uppercase</p>
+        <input type="text" id="textInput" placeholder="Type something...">
+        <button onclick="convertToUpper()">Uppercase</button>
+        <p id="upperText"></p>
+    </div>
+
+    <script>
+        // 1. Convert Fahrenheit to Celsius
+        function convertWeather() {
+            let fahrenheit = document.getElementById("fahrenheit").value;
+            let celsius = (fahrenheit - 32) * (5/9);
+            document.getElementById("weatherResult").innerHTML = `Celsius: ${celsius.toFixed(2)}°C`;
+        }
+
+        // 2. Generate Random Color Gradient
+        function generateGradient() {
+            let color1 = "#" + Math.floor(Math.random() * 16777215).toString(16);
+            let color2 = "#" + Math.floor(Math.random() * 16777215).toString(16);
+            document.getElementById("gradientBox").style.background = `linear-gradient(to right, ${color1}, ${color2})`;
+        }
+
+        // 3. Countdown Timer
+        function startCountdown() {
+            let count = 5;
+            document.getElementById("countdown").innerHTML = count;
+            let interval = setInterval(() => {
+                count--;
+                document.getElementById("countdown").innerHTML = count;
+                if (count <= 0) {
+                    clearInterval(interval);
+                    document.getElementById("countdown").innerHTML = "Time's up!";
+                }
+            }, 1000);
+        }
+
+        // 4. Detect User's Timezone
+        function getTimezone() {
+            let timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            document.getElementById("timezone").innerHTML = `Your Timezone: ${timezone}`;
+        }
+
+        // 5. Show Device Battery Level
+        function getBatteryLevel() {
+            navigator.getBattery().then(battery => {
+                document.getElementById("battery").innerHTML = `Battery Level: ${Math.round(battery.level * 100)}%`;
+            });
+        }
+
+        // 6. Detect Internet Connection
+        function checkConnection() {
+            let status = navigator.onLine ? "Online" : "Offline";
+            document.getElementById("connectionStatus").innerHTML = `You are ${status}`;
+        }
+
+        // 7. Generate Random Fun Fact
+        function generateFact() {
+            let facts = [
+                "Bananas are berries, but strawberries are not.",
+                "Octopuses have three hearts.",
+                "Honey never spoils.",
+                "A day on Venus is longer than a year on Venus.",
+                "Wombat poop is cube-shaped!"
+            ];
+            let randomFact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById("funFact").innerHTML = randomFact;
+        }
+
+        // 8. Detect Browser Information
+        function detectBrowser() {
+            let userAgent = navigator.userAgent;
+            let browserName = "Unknown";
+            if (userAgent.includes("Chrome")) browserName = "Google Chrome";
+            else if (userAgent.includes("Firefox")) browserName = "Mozilla Firefox";
+            else if (userAgent.includes("Safari")) browserName = "Apple Safari";
+            else if (userAgent.includes("Edge")) browserName = "Microsoft Edge";
+            document.getElementById("browserInfo").innerHTML = `You are using: ${browserName}`;
+        }
+
+        // 9. Generate Random Number
+        function generateRandomNumber() {
+            let randomNum = Math.floor(Math.random() * 100) + 1;
+            document.getElementById("randomNumber").innerHTML = `Random Number: ${randomNum}`;
+        }
+
+        // 10. Reverse Input Text
+        function reverseText() {
+            let input = document.getElementById("reverseInput").value;
+            let reversed = input.split("").reverse().join("");
+            document.getElementById("reversedText").innerHTML = reversed;
+        }
+        function convertToUpper() {
+            let text = document.getElementById("textInput").value;
+            document.getElementById("upperText").innerHTML = text.toUpperCase();
+        }
+    </script>
+
+</body>
+</html>
+<h3><a href="hw7.html" class="button2 ">Back to HW-7 homepage</a></h3>
+
+</body>
+</html>

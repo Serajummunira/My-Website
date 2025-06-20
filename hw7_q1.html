@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explanation of Features of My Awesome Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background: blue;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h2>***I added some of the unique features in my website homepage and this is the explanation of what I did***</h2>
+<ol>
+    <h3>1. Digital Clock 🕒
+This feature displays the current time in HH:MM:SS format.
+The updateClock() function retrieves the current time using JavaScript's Date() object and updates the text every second using setInterval()</h3>
+</ol>
+    <!-- 1. Digital Clock -->
+    <!-- This feature displays the real-time digital clock and updates every second. -->
+    <h2>Real-Time Digital Clock</h2>
+    <p id="digital-clock" style="font-size: 24px; font-weight: bold;"></p>
+    
+    <script>
+        function updateClock() {
+            let now = new Date();
+            let timeString = now.toLocaleTimeString();
+            document.getElementById("digital-clock").innerText = timeString;
+        }
+        setInterval(updateClock, 1000);
+        updateClock(); // Initial call
+    </script>
+
+    <hr>
+<ol>
+    <h3>2. Choose Theme Color 🎨
+This feature lets users dynamically change the background color of the homepage.</h3>
+</ol>
+    <!-- 2. Choose Theme Color -->
+    <!-- This feature allows users to change the background color dynamically using a color picker. -->
+    <h2>Choose Theme Color</h2>
+    <label for="colorPicker">Pick a Color:</label>
+    <input type="color" id="colorPicker" value="#ff1493" onchange="changeColor()">
+
+    <script>
+        function changeColor() {
+            document.body.style.backgroundColor = document.getElementById("colorPicker").value;
+        }
+    </script>
+
+    <hr>
+<ol>
+    <h3>3. Personalized Greeting Based on Time ⏰
+This feature displays a greeting message based on the current time:
+Morning (before 12 PM): "Good Morning ☀️"
+Afternoon (12–6 PM): "Good Afternoon 🌤"
+Evening (after 6 PM): "Good Evening 🌙"</h3>
+</ol>
+
+    <!-- 3. Greeting Based on Time of Day -->
+    <!-- This feature greets users with "Good Morning," "Good Afternoon," or "Good Evening" based on their local time. -->
+    <h2>Personalized Greeting</h2>
+    <p id="greeting" style="font-size: 20px; font-weight: bold;"></p>
+
+    <script>
+        let hour = new Date().getHours();
+        let greeting = "Good Evening 🌙";
+        if (hour < 12) {
+            greeting = "Good Morning ☀️";
+        } else if (hour < 18) {
+            greeting = "Good Afternoon 🌤";
+        }
+        document.getElementById("greeting").innerText = greeting;
+    </script>
+
+    <hr>
+<h3>4. Live Word Counter 📝
+This feature counts the number of words in real time as users type in a textarea.</h3>
+    <!-- 4. Live Word Counter -->
+    <!-- This feature counts the number of words typed in the textarea dynamically. -->
+    <h2>Live Word Counter</h2>
+    <textarea id="text-area" rows="4" cols="50" oninput="countWords()"></textarea>
+    <p>Word Count: <span id="word-count">0</span></p>
+
+    <script>
+        function countWords() {
+            let text = document.getElementById("text-area").value.trim();
+            document.getElementById("word-count").innerText = text ? text.split(/\s+/).length : 0;
+        }
+    </script>
+
+    <hr>
+<h3>5. Get a Random Joke 🤣
+This feature fetches a random joke from the official-joke-api when the user clicks the "Get a Joke" button.</h3>
+    <!-- 5. Get a Joke -->
+    <!-- This feature fetches a random joke from an API and displays it on the page. -->
+    <h2>Get a Random Joke</h2>
+    <button onclick="getJoke()">😂 Get a Joke</button>
+    <p id="joke"></p>
+
+    <script>
+        async function getJoke() {
+            let response = await fetch('https://official-joke-api.appspot.com/random_joke');
+            let joke = await response.json();
+            document.getElementById("joke").innerHTML = `${joke.setup} <br><b>${joke.punchline}</b>`;
+        }
+    </script>
+
+    <hr>
+
+    <!-- Scroll-to-Top Button -->
+    <!-- This feature adds a button that smoothly scrolls the user back to the top of the page. -->
+    <button id="scrollTopBtn" onclick="scrollToTop()">⬆️</button>
+
+    <script>
+        window.onscroll = function () {
+            document.getElementById("scrollTopBtn").style.display = window.scrollY > 200 ? "block" : "none";
+        };
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    </script>
+
+</body>
+</html>
